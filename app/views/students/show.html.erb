@@ -1,1 +1,7 @@
 <center><h2><%= @student.full_name%>'s Homepage</h2></center>
+
+<h3>Lessons This Week: </h3>
+
+<% @student.lessons.each do |lesson| %>
+Coach: <%= lesson.coach.name %>
+<% end %>
