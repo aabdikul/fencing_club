@@ -1,7 +1,10 @@
-All Students of Fencing Club
+<h3>All Students of Fencing Club</h3>
 
+<fieldset>
 <% @students.each do |student| %>
-	<%= student.name %>
-	<%= student.age %>
-	<%= student.weapon %>
+	<p><strong>First Name:</strong> <%= student.first_name %></p>
+	<p><strong>Last Name:</strong> <%= student.last_name %></p>
+	<p><strong>Age:</strong> <%= student.age %></p>
+	<P><strong>Weapon:</strong> <%= student.weapon %></p>
 <% end %>
+</fieldset>
