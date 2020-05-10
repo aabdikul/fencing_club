@@ -1,0 +1,25 @@
+<center><h3>Sign Up as a New Student</h3></center>
+
+<%= form_for @student do |f| %>
+
+	<p><%= f.label :first_name %>
+	<%= f.text_field :first_name %></p>
+
+	<p><%= f.label :last_name %>
+	<%= f.text_field :last_name %></p>
+
+	<p><%= f.label :age %>
+	<%= f.text_field :age %></p>
+
+	<p><%= f.label :weapon %>
+	<%= f.text_field :weapon %></p>
+
+	<p><%= f.label :username %>
+	<%= f.text_field :username %></p>
+
+	<p><%= f.label :password %>
+	<%= f.password_field :password %></p>
+
+	<p><%= f.submit "Sign Up" %></p>
+
+<% end %>
