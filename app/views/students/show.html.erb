@@ -3,5 +3,6 @@
 <h3>Lessons This Week: </h3>
 
 <% @student.lessons.each do |lesson| %>
-Coach: <%= lesson.coach.name %>
+<p>Coach: <%= lesson.coach.name %></p>
+<p>Date: <%= lesson.date.strftime(" %A, %b %e at %l:%m %p")%></p>
 <% end %>
