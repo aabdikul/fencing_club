@@ -1,0 +1,7 @@
+<center><h2>Schedule a Lesson</h2></center>
+
+<%= form_for @lesson do |f| %>
+	<%= f.datetime_select :date, ampm: true, start_year: 2020, order: [:month, :day, :year], minute_step: 30 %>
+	<%= f.collection_select(:lesson, :coach_id, Coach.all, :id, :name) %>
+	<%= f.submit %>
+<% end %>

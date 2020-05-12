@@ -6,3 +6,5 @@
 <p>Coach: <%= lesson.coach.name %></p>
 <p>Date: <%= lesson.date.strftime(" %A, %b %e at %l:%m %p")%></p>
 <% end %>
+
+<%= link_to "Schedule a Lesson", new_lesson_path %>
