@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :lessons
-  resources :coaches
+
+  resources :coaches do 
+  	resources :lessons, only: [:new]
+  end
   resources :students
 
   root "application#home"

@@ -13,4 +13,8 @@ helper_method :params
 		end
 	end
 
+	def show 
+		@coach = Coach.find_by(id: params[:id])
+	end
+
 end

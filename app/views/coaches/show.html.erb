@@ -1,0 +1,9 @@
+<h2><center><%= @coach.name%>'s Page</center></h2>
+
+<h3>Coach's Upcoming Lessons</h3>
+
+<% @coach.lessons.each do |lesson| %>
+<li><%= link_to lesson.date.strftime(" %A, %b %e at %l:%m %p"), lesson_path(lesson) %></li>
+<% end %>
+<br>
+<%= link_to "Schedule a Lesson with #{@coach.name}", root_path %>
