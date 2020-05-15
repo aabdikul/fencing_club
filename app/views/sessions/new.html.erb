@@ -1,0 +1,15 @@
+<h1> Login </h1>
+
+<%= form_for Student.new, url: login_path, method: :post do |f|%>
+
+	<p><%= f.label :username %>
+		<%=f.collection_select :username, Student.all, :username, :username %>
+	</p>
+
+	<p><%= f.label :password %>
+		<%= password_field_tag :password %>
+	</p>
+
+	<%= f.submit "Log In" %>
+
+<% end %>

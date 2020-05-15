@@ -6,4 +6,6 @@
 <li><%= link_to lesson.date.strftime(" %A, %b %e at %l:%m %p"), lesson_path(lesson) %></li>
 <% end %>
 <br>
+<% if logged_in? %>
 <%= link_to "Schedule a Lesson with #{@coach.name}", root_path %>
+<% end %>

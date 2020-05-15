@@ -1,4 +1,10 @@
+
 <center><h2><%= @student.full_name%>'s Homepage</h2></center>
+
+<h3>My Profile:</h3>
+<li><strong>Username:</strong> <%= @student.username %></li>
+<li><strong>Weapon:</strong> <%= @student.weapon %></li>
+<p><%= link_to "Edit My Profile", edit_student_path(@student) %></p>
 
 <h3>Lessons This Week: </h3>
 

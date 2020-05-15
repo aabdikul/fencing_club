@@ -1,0 +1,10 @@
+<h2>All of Fencing Club's Lessons</h2>
+
+<% @lessons.each do |lesson| %>
+<fieldset>
+<p>Lesson Date: <%= lesson.date.strftime(" %A, %b %e at %l:%m %p") %></p>
+<p>Coach Name: <%= lesson.coach.name %></p>
+<p>Student Name: <%= lesson.student.full_name %>
+</fieldset>
+<br>
+<% end %>
