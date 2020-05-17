@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is a Fencing Club. Students can sign up so that they can set up lessons with coaches. Students can view coaches, edit their profiles, and take lessons. 
 
-Things you may want to cover:
+To use this applcation, a user can travel to the homepage and sign up with either a platform username and password or use their Github profile to authenticate. Once they use their Github profile, they'll be given the chance to edit their profile and add in all necessary data elements. 
 
-* Ruby version
+They can view coaches and filter by years of experience or region. This will help narrow down a student's options for lessons. 
 
-* System dependencies
+Once a user decides on a coach, they can choose to schedule a lesson by selecting a month, date, year, and time. Lessons are available in 30 minute incredments. Once it's time for their lesson, students can select the lesson, view it, and elect to take the lesson. 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Enjoy using the Fencing Club application! 

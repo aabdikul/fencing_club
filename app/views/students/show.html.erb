@@ -8,8 +8,8 @@
 <h3>Lessons This Week: </h3>
 
 <% @student.lessons.each do |lesson| %>
-<p>Coach: <%= lesson.coach.name %></p>
-<p>Date: <%= lesson.date.strftime(" %A, %b %e at %l:%m %p")%></p>
+<p>Coach: <%= link_to lesson.coach.name, coach_path(lesson.coach) %></p>
+<p>Date: <%= link_to lesson.date.strftime("%A, %d %b %Y %l:%M %p"), lesson_path(lesson)%></p>
 <% end %>
 
 <%= link_to "Schedule a Lesson", new_lesson_path %>
