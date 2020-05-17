@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   end
   resources :students
 
+  get '/auth/:provider/callback' => "sessions#create"
+
   get '/login' => "sessions#new"
   post '/login' => "sessions#create"
   get '/logout' => "sessions#destroy"

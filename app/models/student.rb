@@ -7,4 +7,10 @@ class Student < ApplicationRecord
 		self.first_name.capitalize + " " + self.last_name.capitalize
 	end
 
+	def self.find_or_create_by_omniauth(auth_hash)
+		oauth_login = auth_hash["info"]["nickname"]
+	end
+
+
+
 end

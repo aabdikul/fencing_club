@@ -1,6 +1,5 @@
 class LessonsController < ApplicationController
 
-
 	def index
     	if params[:coach_id]
      	  @coach = Coach.find_by(id: params[:coach_id])
@@ -34,13 +33,13 @@ class LessonsController < ApplicationController
         		@lesson = Lesson.find(params[:id])
       		else
        		 	flash[:alert] = "Lesson not found."
-        		redirect_to coach_lessons_path
+        		redirect_to coach_lessons_path(@coach)
       		end
     	else 
      		if params[:id] && Lesson.find(params[:id])
        		@lesson = Lesson.find(params[:id])
      	 	else 
-       		redirect_to coaches_path
+       		redirect_to lessons_path
       		end
    		 end
    	end
