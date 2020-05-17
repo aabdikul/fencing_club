@@ -14,6 +14,8 @@
 <p><strong>Name:</strong> <%= coach.name %></p>
 <p><strong>Profile:</strong> <%= coach.profile %></p>
 <p><strong>Years of Experience:</strong> <%= coach.years %></p>
-<p><center><%= link_to "Schedule a Lesson with #{coach.name}", new_lesson_path %></center></p>
+<% if @student %> 
+	<p><center><%= link_to "Schedule a Lesson with #{coach.name}", new_lesson_path %></center></p>
+	<%end%>
 </fieldset><br>
 <% end %>

@@ -2,6 +2,7 @@ class CoachesController < ApplicationController
 helper_method :params
 
 	def index
+		@student = Student.find_by(id: session[:student_id])
 		if !params[:years].blank? && params[:region] == ""
 			@coaches = Coach.master(params[:years])
 		elsif !params[:region].blank? && params[:years] == ""

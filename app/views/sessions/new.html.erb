@@ -3,7 +3,7 @@
 <%= form_for Student.new, url: login_path, method: :post do |f|%>
 
 	<p><%= f.label :username %>
-		<%=f.collection_select :username, Student.all, :username, :username %>
+		<%=f.text_field :username %>
 	</p>
 
 	<p><%= f.label :password %>
