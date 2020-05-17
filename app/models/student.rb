@@ -9,6 +9,11 @@ class Student < ApplicationRecord
 
 	def self.find_or_create_by_omniauth(auth_hash)
 		oauth_login = auth_hash["info"]["nickname"]
+		if student = Student.find_by(username: oauth_login)
+		   return student
+		else
+			student = Student.create(username: oauth_login, password: SecureRandom.hex)
+		end
 	end
 
 

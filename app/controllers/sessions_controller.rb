@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
 
 	def create
 		if auth_hash = request.env["omniauth.auth"]
-		   student = Student.find_or_crate_by_omniauth(auth_hash)
+		   student = Student.find_or_create_by_omniauth(auth_hash)
 		   session[:student_id] = student.id
-		   redirect_to students_path
+		   redirect_to student_path(student)
 
 		else
 			student = Student.find_by(username: params[:student][:username])

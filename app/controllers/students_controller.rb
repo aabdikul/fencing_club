@@ -21,7 +21,7 @@ class StudentsController < ApplicationController
 
 	def show 
 		if logged_in? 
-			@student = Student.find_by(id: params[:id]) 
+			@student = Student.find_by(id: params[:id])
 		else 
 			redirect_to root_path
 		end
@@ -33,9 +33,7 @@ class StudentsController < ApplicationController
 
 	def update 
 		@student = Student.find_by(id: params[:id])
-		@student.username = params[:student][:username]
-		@student.weapon = params[:student][:weapon]
-		@student.save
+		@student.update(student_params)
 		redirect_to student_path(@student)
 	end
 
