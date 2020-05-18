@@ -7,5 +7,5 @@
 <% end %>
 <br>
 <% if logged_in? %>
-<%= link_to "Schedule a Lesson with #{@coach.name}", root_path %>
+<%= link_to "Schedule a Lesson with #{@coach.name}", new_coach_lesson_path(@coach) %>
 <% end %>

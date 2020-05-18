@@ -17,5 +17,6 @@
 <% if @student %> 
 	<p><center><%= link_to "Schedule a Lesson with #{coach.name}", new_lesson_path %></center></p>
 	<%end%>
+<p><%= link_to "View This Coach's Lessons", coach_lessons_path(coach) %></p>
 </fieldset><br>
 <% end %>

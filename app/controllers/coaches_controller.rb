@@ -16,6 +16,10 @@ before_action :find_coach, only: [:show]
 	end
 
 	def show 
+		if session[:student_id]
+		else 
+			redirect_to coaches_path
+		end
 	end
 
 	private 

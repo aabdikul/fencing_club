@@ -1,8 +1,8 @@
-<h2>All of Fencing Club's Lessons</h2>
+<h2>Lessons</h2>
 
 <% @lessons.each do |lesson| %>
 <fieldset>
-<p>Lesson Date: <%= lesson.date.strftime(" %A, %b %e at %l:%m %p") %></p>
+<p>Lesson Date: <%= link_to lesson.date.strftime(" %A, %b %e at %l:%m %p"), lesson_path(lesson) %></p>
 <p>Coach Name: <%= lesson.coach.name %></p>
 <p>Student Name: <%= lesson.student.full_name %>
 </fieldset>

@@ -1,4 +1,5 @@
 class LessonsController < ApplicationController
+  before_action :logged_in?, only: [:show]
 
 	def index
     	if params[:coach_id]
@@ -6,18 +7,20 @@ class LessonsController < ApplicationController
      	 	 if @coach
         		  @lessons = @coach.lessons
        		 elsif @coach.nil?
-       		    flash[:alert] = "Coach not found."
           		redirect_to coaches_path
       		 end
    		else 
     		@lessons = Lesson.all 
-      		render "index"
+      	render "index"
     	end
   	end
 
 
 	def new
-		@lesson = Lesson.new
+    @lesson = Lesson.new
+    if params[:coach_id]
+      @coach = Coach.find_by(id: params[:coach_id])
+    end
 	end
 
 	def create 
@@ -27,6 +30,7 @@ class LessonsController < ApplicationController
 	end
 
 	def show
+    if session[:student_id]
     	if params[:coach_id] && Coach.find_by(id: params[:coach_id])
       		@coach = Coach.find_by(id: params[:coach_id])
       		if @coach.lessons.find { |lesson| lesson.id == params[:id].to_i }
@@ -41,6 +45,9 @@ class LessonsController < ApplicationController
        		redirect_to lessons_path
       		end
    		 end
+      else 
+        redirect_to root_path
+      end
    	end
 
  	def destroy

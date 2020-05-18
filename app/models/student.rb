@@ -5,7 +5,7 @@ class Student < ApplicationRecord
 	validates :first_name, presence: true
 	validates :last_name, presence: true
 	validates :age, numericality: { greater_than_or_equal_to: 5, message: "Student is not 5 years old or older."}
-	validates :weapon, inclusion: { in: %w(foil epee sabre),
+	validates :weapon, inclusion: { in: %w(Foil Epee Sabre),
     message: "%{value} is not a valid weapon choice." }
     validates :username, presence: true
 

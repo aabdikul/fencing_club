@@ -2,8 +2,14 @@
 <p><%= link_to @lesson.coach.name, coach_path(@lesson.coach) %></p>
 
 <% a = Time.now.hour %>
-<% if @lesson.date.hour == a %>
-	<%= link_to "Take This Lesson", lesson_path(@lesson), method: :delete %>
+<% b = Time.now.day %>
+<% c = Time.now.month %>
+<% if @lesson.date.hour == a && @lesson.date.day == b %>
+	<%= link_to "Take This Lesson", lesson_path(@lesson), method: :delete %><br>
 	<% end %>
 <br>
+<% if session[:student_id] %>
 <%= link_to "Return to My Homepage", student_path(session[:student_id]) %>
+<% else %>
+<%= link_to "Return to Homepage", root_path %>
+<% end %>
