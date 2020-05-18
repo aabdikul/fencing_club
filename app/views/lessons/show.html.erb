@@ -1,8 +1,9 @@
-<p><%= @lesson.date.strftime("%A, %d %b %Y %l:%M %p")%></p>
+<p><%= @lesson.date.strftime("%A, %b %d, %Y at %l:%M %p")%></p>
 <p><%= link_to @lesson.coach.name, coach_path(@lesson.coach) %></p>
 
-<% if @lesson.date == Time.current %>
-	<%= button_to "Take This Lesson", lesson_path(@lesson), method: :delete %>
+<% a = Time.now.hour %>
+<% if @lesson.date.hour == a %>
+	<%= link_to "Take This Lesson", lesson_path(@lesson), method: :delete %>
 	<% end %>
 <br>
 <%= link_to "Return to My Homepage", student_path(session[:student_id]) %>

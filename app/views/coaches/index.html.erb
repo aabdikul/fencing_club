@@ -11,7 +11,7 @@
 
 <% @coaches.each do |coach| %>
 <fieldset>
-<p><strong>Name:</strong> <%= coach.name %></p>
+<p><strong>Name:</strong> <%= link_to coach.name, coach_path(coach) %></p>
 <p><strong>Profile:</strong> <%= coach.profile %></p>
 <p><strong>Years of Experience:</strong> <%= coach.years %></p>
 <% if @student %> 

@@ -1,7 +1,7 @@
 <center><h2>Schedule a Lesson</h2></center>
 
 <%= form_for @lesson do |f| %>
-	<p><%= f.datetime_select :date, ampm: true, start_year: 2020, order: [:month, :day, :year] %><p>
+	<p><%= f.datetime_select :date, start_year: 2020, minute_step: 60, order: [:month, :day, :year] %><p>
 	<p><%= f.collection_select(:coach_id, Coach.all, :id, :name) %></p>
 	<p>  <%= f.hidden_field :student_id, value: session[:student_id]%></p>
 	<%= f.submit %>

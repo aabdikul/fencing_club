@@ -8,6 +8,15 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+        <style>
+         body {
+          background-image: url("https://images.unsplash.com/photo-1542500121-0d07e29f27f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80");
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+          }
+        </style>
+
       <% if logged_in? %>
       <%= link_to "Log Out", logout_path %>
       <% end %>
