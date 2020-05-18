@@ -6,6 +6,6 @@ To use this applcation, a user can travel to the homepage and sign up with eithe
 
 They can view coaches and filter by years of experience or region. This will help narrow down a student's options for lessons. 
 
-Once a user decides on a coach, they can choose to schedule a lesson by selecting a month, date, year, and time. Lessons are available in 30 minute incredments. Once it's time for their lesson, students can select the lesson, view it, and elect to take the lesson. 
+Once a user decides on a coach, they can choose to schedule a lesson by selecting a month, date, year, and time. Lessons are available in 1 hour incredments. Once it's time for their lesson, students can select the lesson, view it, and elect to take the lesson. Students can also cancel lessons.
 
 Enjoy using the Fencing Club application! 
