@@ -1,16 +1,4 @@
 <center><h2>Edit My Profile</h2></center>
 
-<%= form_for @student do |f| %>
-<p><%= f.label :username %>
-	<%= f.text_field :username %></p>
-<p><%= f.label :weapon %>
-	<%= f.text_field :weapon %></p>
-<p><%= f.label :first_name %>
-	<%= f.text_field :first_name %></p>
-<p><%= f.label :last_name %>
-	<%= f.text_field :last_name %></p>
-<p><%= f.label :age %>
-	<%= f.text_field :age %></p>
-<%= f.submit "Update Profile"%>
-<% end %>
+<%= render partial: 'form', locals: {student: @student} %>
 
