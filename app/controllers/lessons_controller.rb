@@ -32,7 +32,6 @@ class LessonsController < ApplicationController
       		if @coach.lessons.find { |lesson| lesson.id == params[:id].to_i }
         		@lesson = Lesson.find(params[:id])
       		else
-       		 	flash[:alert] = "Lesson not found."
         		redirect_to coach_lessons_path(@coach)
       		end
     	else 

@@ -1,5 +1,6 @@
 class CoachesController < ApplicationController
 helper_method :params
+before_action :find_coach, only: [:show]
 
 	def index
 		@student = Student.find_by(id: session[:student_id])
@@ -15,6 +16,11 @@ helper_method :params
 	end
 
 	def show 
+	end
+
+	private 
+
+	def find_coach
 		@coach = Coach.find_by(id: params[:id])
 	end
 
