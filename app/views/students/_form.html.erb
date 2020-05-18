@@ -1,7 +1,13 @@
-
-
-
 <%= form_for @student do |f| %>
+
+<% if @student.errors.any? %>
+ 	<div id="error_explanation">
+       	<% @student.errors.full_messages.each do |message| %>
+        <p><%= message %></p>
+        <% end %>
+    </div>
+<%end%>
+
 
 	<p><%= f.label :first_name %>
 	<%= f.text_field :first_name %></p>
@@ -24,15 +30,6 @@
 		<%= f.password_field :password %></p>
 		<% end %>
 
-		<% if session[:student_id].nil? %>
- 			<% if @student.errors.any? %>
-      		There were some errors:
-       		<% @student.errors.full_messages.each do |message| %>
-        	<%= message %>
-        	<% end %>
-        <%end%>
-
 	<p><%= f.submit %></p>
 
 	<% end %>
-	<% end%>

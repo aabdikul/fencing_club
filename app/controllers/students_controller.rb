@@ -6,7 +6,7 @@ class StudentsController < ApplicationController
 		@students = Student.all
 	end
 
-	def new 
+	def new
 		@student = Student.new
 	end
 
@@ -16,7 +16,7 @@ class StudentsController < ApplicationController
 				session[:student_id] = @student.id
 				redirect_to student_path(@student)
 			else
-				redirect_to new_student_path
+				render :new
 			end
 	end
 
