@@ -8,10 +8,19 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <h1><center>Fencing Club Website</center></h1>
       <% if logged_in? %>
       <%= link_to "Log Out", logout_path %>
       <% end %>
+      <% if logged_in? %>
+        <%= link_to "Home", student_path(session[:student_id]) %>
+      <% else %>
+        <%= link_to "Home", root_path %>
+      <%end%>
+      <%= link_to "Coaches", coaches_path %>
+      <%= link_to "Students", students_path %>
+      <%= link_to "Lessons", lessons_path %>
+    <h1><center>Fencing Club Website</center></h1>
+ 
     <%= yield %>
   </body>
 </html>
