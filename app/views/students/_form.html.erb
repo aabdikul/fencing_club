@@ -8,6 +8,7 @@
 
 	<p><%= f.label :age %>
 	<%= f.text_field :age %></p>
+	<i>Student must be older than 5 years old to fence.</i>
 
 	<p><%= f.label :weapon %>
 	<%= f.text_field :weapon %></p>
@@ -15,11 +16,20 @@
 	<p><%= f.label :username %>
 	<%= f.text_field :username %></p>
 
-	<% if session[:student_id].nil? %> 
-	<p><%= f.label :password %>
-	<%= f.password_field :password %></p>
-	<% end %>
+		<% if session[:student_id].nil? %> 
+		<p><%= f.label :password %>
+		<%= f.password_field :password %></p>
+		<% end %>
+
+		<% if session[:student_id].nil? %>
+ 			<% if @student.errors.any? %>
+      		There were some errors:
+       		<% @student.errors.full_messages.each do |message| %>
+        	<%= message %>
+        	<% end %>
+        <%end%>
 
 	<p><%= f.submit %></p>
 
-	<%end%>
+	<% end %>
+	<% end %>
