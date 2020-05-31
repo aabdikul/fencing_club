@@ -1,5 +1,6 @@
 class LessonsController < ApplicationController
   before_action :logged_in?, only: [:show]
+  include StudentsHelper
 
 	def index
     	if params[:coach_id]
@@ -30,7 +31,7 @@ class LessonsController < ApplicationController
 	end
 
 	def show
-    if session[:student_id]
+    if logged_in?
     	if params[:coach_id] && Coach.find_by(id: params[:coach_id])
       		@coach = Coach.find_by(id: params[:coach_id])
       		if @coach.lessons.find { |lesson| lesson.id == params[:id].to_i }

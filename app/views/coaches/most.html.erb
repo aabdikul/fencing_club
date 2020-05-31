@@ -1,0 +1,12 @@
+<h1><center>Our Most Popular Coach:</center></h1>
+
+<h3 style="color:blue;"><center> <%= @coach.name %> </center></h1>
+
+<p><strong>Coach's Years of Experience: </strong><%= @coach.years %></p>
+
+<p><strong>Coach's Region: </strong><%= @coach.region %></p>
+
+<p><strong>City of Instruction: </strong><%= @coach.city %></p>
+
+<%= link_to "Schedule a Lesson with #{@coach.name}", new_coach_lesson_path(@coach) %>
+

@@ -9,6 +9,9 @@
   <% end %>
   <br>
 
+ <center><p><h3>Don't know who you're looking for?</h3></p></center>
+ <center><p><h4><%= link_to "See our most popular coach!", most_lessons_path%></h4></p></center>
+
 <% @coaches.each do |coach| %>
 <fieldset>
 <p><strong>Name:</strong> <%= link_to coach.name, coach_path(coach) %></p>

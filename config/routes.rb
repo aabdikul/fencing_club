@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get '/logout' => "sessions#destroy"
   delete '/logout' => "sessions#destroy"
 
+  get '/most_lessons' => "coaches#most"
+
   root "application#home"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

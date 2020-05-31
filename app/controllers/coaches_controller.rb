@@ -1,6 +1,7 @@
 class CoachesController < ApplicationController
 helper_method :params
 before_action :find_coach, only: [:show]
+include StudentsHelper
 
 	def index
 		@student = Student.find_by(id: session[:student_id])
@@ -16,9 +17,17 @@ before_action :find_coach, only: [:show]
 	end
 
 	def show 
-		if session[:student_id]
+		if logged_in?
 		else 
 			redirect_to coaches_path
+		end
+	end
+
+	def most
+		if logged_in?
+		   @coach = Coach.most_lessons
+		else 
+		   redirect_to coaches_path
 		end
 	end
 
